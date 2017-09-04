@@ -21,7 +21,7 @@ EmployeeService service;
 @RequestMapping(value="/getAllEmployees", method= RequestMethod.GET,headers="Accept=application/json")
 public String getEmployees(Model model){
 	List<Employee> listOfEmployee = service.getAllEmployee();
-	model.addAttribute("Employee", new Employee());
+	model.addAttribute("Employee", new Employee(0, null, null, 0));
 	model.addAttribute("listOfEmployee",listOfEmployee);
 	return "EmployeeDetails";
 }
